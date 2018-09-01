@@ -74,6 +74,7 @@ public class Main {
             arbolTD2.insertar(palabras[0], Integer.parseInt(palabras[1])); 
         }
         
+        System.out.println("Al: "+arbolTD2.buscar("alimania"));
         System.out.println("Al: "+arbolTD2.buscar("alimaña"));
     }
 }
