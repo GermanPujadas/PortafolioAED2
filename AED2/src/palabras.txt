@@ -1,0 +1,12 @@
+ala,1
+alimania,2
+alabastro,5
+perro,67
+pera,12
+alimento,23
+casa,87
+casada,90
+cazar,65
+programa,23
+programacion,100
+programar,102
