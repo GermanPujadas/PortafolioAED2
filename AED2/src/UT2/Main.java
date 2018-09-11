@@ -8,7 +8,8 @@ package UT2;
 import UT2.TD1.TNodoArbolGenerico;
 import UT2.TD1.TArbolGenerico;
 import UT2.TD1.Departamentos;
-import UT2.TD2.TArbolTrie;
+import UT2.TD2_3.TArbolTrie;
+import java.util.ArrayList;
 import java.util.LinkedList;
 
 /**
@@ -67,14 +68,41 @@ public class Main {
         System.out.println("Tarea domiciliaria 2");
         
         TArbolTrie arbolTD2 = new TArbolTrie();
-        String[] archivo = ManejadorDeArchivos.leerArchivo("src/palabras.txt");
+        String[] archivoTD2 = ManejadorDeArchivos.leerArchivo("src/palabras.txt");
         
-        for (String linea : archivo){
+        for (String linea : archivoTD2){
             String[] palabras = linea.split(",");
             arbolTD2.insertar(palabras[0], Integer.parseInt(palabras[1])); 
         }
         
         System.out.println("Al: "+arbolTD2.buscar("alimania"));
         System.out.println("Al: "+arbolTD2.buscar("alimaña"));
+        
+        ArrayList paginas = arbolTD2.devolverPaginas("alimania");
+        String paginasEncontradas = "";
+        if (paginas != null){
+            for(Object pagina : paginas)
+                paginasEncontradas+= pagina+", ";
+            System.out.println("alimania: "+paginasEncontradas);
+        }
+        else
+            System.out.println("Palabra no encontrada");
+        
+        
+        /*    TAREA DOMICILIARIA 3    */
+        
+        System.out.println("Tarea domiciliaria 3");
+        
+        TArbolTrie arbolTD3 = new TArbolTrie();
+        String[] indiceTD3 = ManejadorDeArchivos.leerArchivo("src/PalabrasIndice.txt");
+        //String[] libroTD3 = ManejadorDeArchivos.leerArchivo("src/libro.txt");
+        String[] libroTD3 = ManejadorDeArchivos.leerArchivo("src/libropru.txt");
+        
+        for (String palabra : indiceTD3){
+            arbolTD3.insertar(palabra.toLowerCase().replace(" ", "")); 
+        }
+        
+        arbolTD3.indizarLibro(libroTD3);
+        arbolTD3.imprimirIndice();
     }
 }
