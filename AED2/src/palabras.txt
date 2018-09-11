@@ -5,11 +5,8 @@ perro,67
 pera,12
 alimento,23
 casa,87
-alimania,9
 casada,90
 cazar,65
 programa,23
 programacion,100
 programar,102
-alimania,3
-alimania,6
