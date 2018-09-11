@@ -21,7 +21,8 @@ public class Main {
     public static void main(String[] args) {
     
         /*    TAREA DOMICILIARIA 1    */
-        System.out.println("Tarea domiciliaria 1");
+        System.out.println("--------Tarea domiciliaria 1--------");
+        System.out.println("");
         
         TArbolGenerico<Departamentos> arbolTD1 = new TArbolGenerico();
         TNodoArbolGenerico<Departamentos> Rectoria = new TNodoArbolGenerico<>("Rectoria",new Departamentos("Rectoria"));
@@ -65,7 +66,9 @@ public class Main {
         
         /*    TAREA DOMICILIARIA 2    */
         
-        System.out.println("Tarea domiciliaria 2");
+        System.out.println("\n");
+        System.out.println("--------Tarea domiciliaria 2--------");
+        System.out.println("");
         
         TArbolTrie arbolTD2 = new TArbolTrie();
         String[] archivoTD2 = ManejadorDeArchivos.leerArchivo("src/palabras.txt");
@@ -91,7 +94,9 @@ public class Main {
         
         /*    TAREA DOMICILIARIA 3    */
         
-        System.out.println("Tarea domiciliaria 3");
+        System.out.println("\n");
+        System.out.println("--------Tarea domiciliaria 3--------");
+        System.out.println("");
         
         TArbolTrie arbolTD3 = new TArbolTrie();
         String[] indiceTD3 = ManejadorDeArchivos.leerArchivo("src/PalabrasIndice.txt");
