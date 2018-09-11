@@ -95,8 +95,7 @@ public class Main {
         
         TArbolTrie arbolTD3 = new TArbolTrie();
         String[] indiceTD3 = ManejadorDeArchivos.leerArchivo("src/PalabrasIndice.txt");
-        //String[] libroTD3 = ManejadorDeArchivos.leerArchivo("src/libro.txt");
-        String[] libroTD3 = ManejadorDeArchivos.leerArchivo("src/libropru.txt");
+        String[] libroTD3 = ManejadorDeArchivos.leerArchivo("src/libro.txt");
         
         for (String palabra : indiceTD3){
             arbolTD3.insertar(palabra.toLowerCase().replace(" ", "")); 
