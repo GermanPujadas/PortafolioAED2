@@ -8,7 +8,9 @@ package UT2;
 import UT2.TD1.TNodoArbolGenerico;
 import UT2.TD1.TArbolGenerico;
 import UT2.TD1.Departamentos;
-import UT2.TD2_3.TArbolTrie;
+import UT2.TD2.TArbolTrie;
+import UT2.TD3.TArbolTrieTD3;
+import UT2.TD6.TArbolTrieTD6;
 import java.util.ArrayList;
 import java.util.LinkedList;
 
@@ -98,7 +100,7 @@ public class Main {
         System.out.println("--------Tarea domiciliaria 3--------");
         System.out.println("");
         
-        TArbolTrie arbolTD3 = new TArbolTrie();
+        TArbolTrieTD3 arbolTD3 = new TArbolTrieTD3();
         String[] indiceTD3 = ManejadorDeArchivos.leerArchivo("src/PalabrasIndice.txt");
         String[] libroTD3 = ManejadorDeArchivos.leerArchivo("src/libro.txt");
         
@@ -108,5 +110,38 @@ public class Main {
         
         arbolTD3.indizarLibro(libroTD3);
         arbolTD3.imprimirIndice();
+    
+        
+    /*    TAREA DOMICILIARIA 6    */
+        
+        System.out.println("\n");
+        System.out.println("--------Tarea domiciliaria 6--------");
+        System.out.println("");
+        
+        TArbolTrieTD6 arbolDeSufijos = new TArbolTrieTD6();
+        String[] secuenciaTD6 = ManejadorDeArchivos.leerArchivo("src/pequeniaSecuencia.txt");
+        
+        int indice = secuenciaTD6[0].length()-1;
+
+        while (indice >= 0){
+            String sufijo = "";
+            for (int i = indice; i < secuenciaTD6[0].length(); i++) {
+                sufijo += secuenciaTD6[0].charAt(i);
+            }
+            arbolDeSufijos.insertar(sufijo, indice);
+            indice --;   
+        }
+         
+        arbolDeSufijos.imprimirArbol();
+        
+        if (!arbolDeSufijos.buscarPatron("ct").isEmpty()){
+            System.out.print("El patron ct se encuentra en la(s) posicion(es): ");
+            for(Object inicio : arbolDeSufijos.buscarPatron("ct"))
+                System.out.print(" "+inicio);
+        }
+        System.out.println("");
+            
+    
     }
+        
 }

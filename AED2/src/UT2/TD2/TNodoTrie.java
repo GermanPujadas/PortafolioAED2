@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package UT2.TD2_3;
+package UT2.TD2;
 
 import java.util.ArrayList;
 
@@ -88,26 +88,5 @@ public class TNodoTrie {
                 return nodoActual.verPaginas();
             }
         return null;
-    }
-    
-    private void imprimir(String s, TNodoTrie nodo) {
-        if (nodo != null) {
-            if (nodo.esPalabra) {
-                if(!nodo.verPaginas().isEmpty()){
-                    System.out.print(s+": ");
-                    for(Object pagina : nodo.verPaginas())
-                        System.out.print(pagina+" ");
-                    System.out.println("");
-                }
-            }
-            for (int c = 0; c < cantDeLetras; c++) {
-                if (nodo.hijos[c] != null) {
-                    imprimir(s + (char) (c + 'a'), nodo.hijos[c]);
-                }
-            }
-        }
-    }
-    public void imprimir() {
-        imprimir("", this);
     }
 }

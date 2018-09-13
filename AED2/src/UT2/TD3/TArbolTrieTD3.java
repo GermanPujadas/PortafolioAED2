@@ -1,4 +1,4 @@
-package UT2.TD2_3;
+package UT2.TD3;
 
 import UT2.onlyASCII;
 import java.util.ArrayList;
@@ -13,12 +13,12 @@ import java.util.ArrayList;
  *
  * @author germanpujadas
  */
-public class TArbolTrie {
+public class TArbolTrieTD3 {
     
-    private TNodoTrie raiz;
+    private TNodoTrieTD3 raiz;
     
-    public TArbolTrie(){
-        raiz = new TNodoTrie();
+    public TArbolTrieTD3(){
+        raiz = new TNodoTrieTD3();
     }
     
     public void insertar (String unaPalabra, int pagina){
@@ -38,7 +38,7 @@ public class TArbolTrie {
     }
     
     public void indizarLibro (String[] unLibro){
-        int pagina = 0;
+        int pagina = 1;
         int nroLinea = 0;
         for (String linea : unLibro){
             if (nroLinea == 50){
