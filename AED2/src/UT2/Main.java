@@ -140,6 +140,6 @@ public class Main {
             for(Object inicio : arbolDeSufijos.buscarPatron("tg"))
                 System.out.print(" "+inicio);
         }
-        System.out.println("Prueba");
+        System.out.println("");
     }
 }
