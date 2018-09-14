@@ -66,7 +66,7 @@ public class Main {
 
         arbolTD1.listarIndentado();
         
-        /*    TAREA DOMICILIARIA 2    */
+    /*    TAREA DOMICILIARIA 2    */
         
         System.out.println("\n");
         System.out.println("--------Tarea domiciliaria 2--------");
@@ -94,7 +94,7 @@ public class Main {
             System.out.println("Palabra no encontrada");
         
         
-        /*    TAREA DOMICILIARIA 3    */
+    /*    TAREA DOMICILIARIA 3    */
         
         System.out.println("\n");
         System.out.println("--------Tarea domiciliaria 3--------");
@@ -119,7 +119,8 @@ public class Main {
         System.out.println("");
         
         TArbolTrieTD6 arbolDeSufijos = new TArbolTrieTD6();
-        String[] secuenciaTD6 = ManejadorDeArchivos.leerArchivo("src/pequeniaSecuencia.txt");
+        String[] secuenciaTD6 = ManejadorDeArchivos.leerArchivo("src/PequeniaSecuencia.txt");
+//      String[] secuenciaTD6 = ManejadorDeArchivos.leerArchivo("src/Secuencia.txt");
         
         int indice = secuenciaTD6[0].length()-1;
 
@@ -132,16 +133,13 @@ public class Main {
             indice --;   
         }
          
-        arbolDeSufijos.imprimirArbol();
+        //arbolDeSufijos.imprimirArbol();
         
         if (!arbolDeSufijos.buscarPatron("ct").isEmpty()){
             System.out.print("El patron ct se encuentra en la(s) posicion(es): ");
-            for(Object inicio : arbolDeSufijos.buscarPatron("ct"))
+            for(Object inicio : arbolDeSufijos.buscarPatron("tg"))
                 System.out.print(" "+inicio);
         }
         System.out.println("");
-            
-    
     }
-        
 }
