@@ -14,7 +14,7 @@ import java.util.LinkedList;
  */
 public class TNodoTrieTD6 {
     
-    private final int cantDeLetras = 26;
+    private final int cantDeLetras = 4;
     private TNodoTrieTD6[] hijos;
     private boolean esPalabra;
     private int inicioDePalabra;
@@ -25,10 +25,40 @@ public class TNodoTrieTD6 {
     }
 
     
+    public int getIndice(char unChar){
+        switch ((int) unChar){
+            case 97:
+                return 0;
+            case 99:
+                return 1;
+            case 103:
+                return 2;
+            case 116:
+                return 3;
+            default:
+                return -1;
+        }
+    }
+    
+    public char getChar(int unValor){
+        switch (unValor){
+            case 0:
+                return 'a';
+            case 1:
+                return 'c';
+            case 2:
+                return 'g';
+            case 3:
+                return 't';
+            default:
+                return ' ';
+        }
+    }
+    
     public void insertar(String unaPalabra, int inicio) {
         TNodoTrieTD6 nodoActual = this;
         for (int i=0; i<unaPalabra.length(); i++){
-                int indice = unaPalabra.charAt(i)-'a';
+                int indice = getIndice(unaPalabra.charAt(i));
                 if (nodoActual.hijos[indice] == null){
                     nodoActual.hijos[indice] = new TNodoTrieTD6();
                 }
@@ -42,7 +72,7 @@ public class TNodoTrieTD6 {
     public boolean buscar(String unaPalabra) {
         TNodoTrieTD6 nodoActual = this;
         for (int i = 0; i < unaPalabra.length(); i++) {
-            int indiceBuscado = unaPalabra.charAt(i) - 'a';
+            int indiceBuscado = getIndice(unaPalabra.charAt(i));
             if (unaPalabra.charAt(i) != unaPalabra.toLowerCase().charAt(i) || indiceBuscado > cantDeLetras-1){
                 return false;
             }
@@ -67,7 +97,7 @@ public class TNodoTrieTD6 {
         TNodoTrieTD6 nodoActual = this;
         
         for (int i = 0; i < unPatron.length(); i++){
-            int indice = unPatron.charAt(i) - 'a';
+            int indice = getIndice(unPatron.charAt(i));
             if (nodoActual.hijos[indice] != null)
                 nodoActual = nodoActual.hijos[indice];
             else
@@ -98,7 +128,7 @@ public class TNodoTrieTD6 {
         }
         for (int c = 0; c < cantDeLetras; c++) {
             if (nodo.hijos[c] != null) {
-                imprimir(s + (char) (c + 'a'), nodo.hijos[c]);
+                imprimir(s + getChar(c), nodo.hijos[c]);
             }
         }
     }

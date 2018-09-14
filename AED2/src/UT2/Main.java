@@ -133,7 +133,7 @@ public class Main {
             indice --;   
         }
          
-        //arbolDeSufijos.imprimirArbol();
+        arbolDeSufijos.imprimirArbol();
         
         if (!arbolDeSufijos.buscarPatron("ct").isEmpty()){
             System.out.print("El patron ct se encuentra en la(s) posicion(es): ");
