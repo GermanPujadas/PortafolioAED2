@@ -33,10 +33,6 @@ public class TArbolTrieTD3 {
         return raiz.buscar(unaPalabra);
     }
     
-    public ArrayList devolverPaginas (String unaPalabra){
-        return raiz.devolverPaginas(unaPalabra);
-    }
-    
     public void indizarLibro (String[] unLibro){
         int pagina = 1;
         int nroLinea = 0;

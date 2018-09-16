@@ -75,21 +75,7 @@ public class TNodoTrieTD3 {
         else
             return false;
     }
-    
-    public ArrayList devolverPaginas (String unaPalabra){
-        if (buscar(unaPalabra)) {
-                TNodoTrieTD3 nodoActual = this;
-                int posicion = 0;
-                while (!nodoActual.esPalabra){
-                    int index = unaPalabra.charAt(posicion) - 'a';
-                    nodoActual = nodoActual.hijos[index];
-                    posicion++;
-                }
-                return nodoActual.verPaginas();
-            }
-        return null;
-    }
-    
+        
     private void imprimir(String s, TNodoTrieTD3 nodo) {
         if (nodo != null) {
             if (nodo.esPalabra) {
