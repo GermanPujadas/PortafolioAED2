@@ -8,7 +8,9 @@ package UT3;
 import UT3.*;
 
 import UT2.ManejadorDeArchivos;
+import UT3.TD1.TArbolTriePredecir;
 import UT3.TD1.THash;
+import java.util.LinkedList;
 
 /**
  *
@@ -32,6 +34,19 @@ public class Main {
 
          }
          
+         String[] palabras = ManejadorDeArchivos.leerArchivo("src/palabrasPredecirPrueba.txt");
+         TArbolTriePredecir arbolDePrefijos = new TArbolTriePredecir();
+         
+         for(String palabra : palabras){
+             arbolDePrefijos.insertar(palabra);
+         }
+         
+         LinkedList prefijos = new LinkedList();
+         String unPrefijo = "ca";
+         prefijos = arbolDePrefijos.predecir(unPrefijo);
+         for(Object prefijo : prefijos)
+             System.out.println(prefijo);
+             
 
     }   
 }

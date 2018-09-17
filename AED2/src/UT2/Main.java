@@ -11,6 +11,7 @@ import UT2.TD1.Departamentos;
 import UT2.TD2.TArbolTrie;
 import UT2.TD3.TArbolTrieTD3;
 import UT2.TD6.TArbolTrieTD6;
+import UT2.TA3.*;
 import java.util.ArrayList;
 import java.util.LinkedList;
 
@@ -141,5 +142,24 @@ public class Main {
                 System.out.print(" "+inicio);
         }
         System.out.println("");
+        
+        /*    TRABAJO DE APLICACION 3    */
+        System.out.println("\n");
+        System.out.println("--------Trabajo de aplicacion 3--------");
+        System.out.println("");
+        
+        String[] palabras = ManejadorDeArchivos.leerArchivo("src/palabrasPredecirPrueba.txt");
+        TArbolTriePredecir arbolDePrefijos = new TArbolTriePredecir();
+         
+        for(String palabra : palabras){
+            arbolDePrefijos.insertar(palabra);
+        }
+         
+        LinkedList prefijos = new LinkedList();
+        String unPrefijo = "ca";
+        prefijos = arbolDePrefijos.predecir(unPrefijo);
+        for(Object prefijo : prefijos)
+            System.out.println(prefijo);
     }
+    
 }
