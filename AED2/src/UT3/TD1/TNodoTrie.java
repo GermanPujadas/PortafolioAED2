@@ -8,6 +8,7 @@ package UT3.TD1;
 
 import java.util.LinkedList;
 import java.util.HashMap;
+import java.util.Map;
 
 /**
  *
@@ -62,7 +63,10 @@ public class TNodoTrie{
         if (this.esPalabra){
             unaLista.add(cadena);
         }
-        this.hijos.forEach((k,v) -> {v.recorrer(unaLista, cadena + k);});
+        for(Map.Entry<Character, TNodoTrie> data : this.hijos.entrySet()){
+            data.getValue().recorrer(unaLista, cadena+data.getKey());
+        }
+        //this.hijos.forEach((k,v) -> {v.recorrer(unaLista, cadena + k);});
     }
 
     public LinkedList predecir(String prefijo, LinkedList prefijos) {
