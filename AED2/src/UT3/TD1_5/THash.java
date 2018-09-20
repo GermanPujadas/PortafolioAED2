@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package UT3.TD1;
+package UT3.TD1_5;
 
 /**
  *
@@ -24,12 +24,12 @@ public class THash implements IHash {
     public int insertarSondeoLinenal(Comparable clave) {
         int indiceAInsertar = this.funcionHashing(clave.toString());
         int indiceInicial = indiceAInsertar;
-        int comparaciones = 0;
+        int comparaciones = 1;
         while (this.tabla[indiceAInsertar] != null){
             indiceAInsertar = (indiceAInsertar+1)%this.capacidad;
-            comparaciones+=1;
             if (indiceAInsertar == indiceInicial)
-                return -indiceAInsertar;
+                return -comparaciones;
+            comparaciones+=1;
         }
         tabla[indiceAInsertar] = clave;
         return comparaciones;
@@ -40,14 +40,14 @@ public class THash implements IHash {
     public int buscarSondeoLinenal(Comparable clave) {
         int indiceABuscar = this.funcionHashing(clave.toString());
         int indiceInicial = indiceABuscar;
-        int comparaciones = 0;
+        int comparaciones = 1;
         
         while (this.tabla[indiceABuscar] != null){ 
-            comparaciones+=1;
             if (!this.tabla[indiceABuscar].equals(clave)){    
                 indiceABuscar = (indiceABuscar+1)%this.capacidad;
                 if (indiceABuscar == indiceInicial)
                     return -comparaciones;
+                comparaciones+=1;
             }
             else
                 return comparaciones;

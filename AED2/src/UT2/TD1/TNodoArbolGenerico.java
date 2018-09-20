@@ -34,9 +34,9 @@ public class TNodoArbolGenerico<T> implements INodoArbolGenerico<T> {
         if (padre!= null){
             INodoArbolGenerico<T> nodoActual = padre.getPrimerHijo();
             if (nodoActual != null){
-            while (nodoActual.getSiguienteHermano() != null){
+                while (nodoActual.getSiguienteHermano() != null){
                 nodoActual = nodoActual.getSiguienteHermano();
-            }
+                }
             nodoActual.setSiguienteHermano(unNodo);
             return true;
             }
