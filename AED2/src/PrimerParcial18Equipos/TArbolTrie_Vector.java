@@ -1,4 +1,6 @@
-package PrimerParcial18;
+package PrimerParcial18Equipos;
+
+
 
 import java.util.Collection;
 import java.util.LinkedList;
@@ -11,18 +13,18 @@ import java.util.LinkedList;
 
 /**
  *
- * @author germanpujadas
+ * @author Equipo 1
  */
-public class TArbolTrie implements IArbolTrie{
+public class TArbolTrie_Vector implements IArbolTrie{
     
-    private TNodoTrie raiz;
+    private TNodoTrie_Vector raiz;
     
-    public TArbolTrie(){
-        raiz = new TNodoTrie();
+    public TArbolTrie_Vector(){
+        raiz = new TNodoTrie_Vector();
     }
     
     @Override
-    public Collection<TDispositivo> buscarDispositivos(String mascaraSubRed) {
+    public LinkedList<TDispositivo> buscarDispositivos(String mascaraSubRed) {
         LinkedList<TDispositivo> listaDeDispostivos = new LinkedList<>();
         if(raiz != null)
             raiz.buscarDispositivos(mascaraSubRed.replace(".", ""), listaDeDispostivos);

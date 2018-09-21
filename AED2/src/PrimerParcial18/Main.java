@@ -54,7 +54,7 @@ public class Main {
         // crear el archivo "salida.txt", con los dispositivos(1 por linea) 
         // correspondientes a la subred indicada
         // imprimir Nombre y dirección de  IP, 
-        ManejadorArchivosGenerico.escribirArchivo("src/salida.txt", salida);
+        ManejadorArchivosGenerico.escribirArchivo("src/salidaParcial.txt", salida);
         
     }
 }
